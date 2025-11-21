@@ -9,8 +9,6 @@ interface FormData {
   email: string;
   phone: string;
   description: string;
-  location: string;
-  preferredDate: string;
 }
 
 interface ServiceOrderFormProps {
@@ -33,8 +31,6 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
       email: formData.get('email') as string,
       phone: formData.get('phone') as string,
       description: formData.get('description') as string,
-      location: formData.get('location') as string,
-      preferredDate: formData.get('preferredDate') as string,
     };
     
     console.log('Form data:', data);
@@ -152,34 +148,9 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Bevorzugter Standort
-          </label>
-          <select 
-            name="location"
-            className="w-full p-4 border border-gray-300 rounded-xl bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
-          >
-            <option value="">Bitte wählen Sie einen Standort</option>
-            <option value="potsdam">Potsdam - Babelsberger Str. 16</option>
-            <option value="werder">Werder - Auf dem Strengfeld 6</option>
-          </select>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Bevorzugtes Datum
-          </label>
-          <input 
-            type="date" 
-            name="preferredDate"
-            className="w-full p-4 border border-gray-300 rounded-xl bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
-          />
-        </div>
-        
         <button 
           type="submit"
-          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl"
+          className="w-full bg-blue-600 text-white py-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl"
         >
           Termin anfragen
         </button>
