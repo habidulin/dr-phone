@@ -13,7 +13,7 @@ export default function FeaturesSection() {
     {
       icon: "🛡️",
       title: "Mit Garantie",
-      description: "12 Monate Garantie auf alle unsere Reparaturen"
+      description: "3 Monate Garantie auf alle unsere Reparaturen"
     },
     {
       icon: "💰",

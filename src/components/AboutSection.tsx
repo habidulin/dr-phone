@@ -40,7 +40,7 @@ export default function AboutSection() {
                 </p>
                 
                 <p>
-                  Wir verwenden nur hochwertige Ersatzteile und bieten 12 Monate Garantie 
+                  Wir verwenden nur hochwertige Ersatzteile und bieten 3 Monate Garantie 
                   auf alle unsere Reparaturen. Die meisten Reparaturen erledigen wir 
                   in nur 30-60 Minuten vor Ort.
                 </p>
@@ -68,7 +68,7 @@ export default function AboutSection() {
               </div>
               
               <div className="text-center p-2 from-purple-50 to-purple-100 rounded-2xl border border-purple-200">
-                <div className="text-2xl font-bold text-purple-600 mb-1">12</div>
+                <div className="text-2xl font-bold text-purple-600 mb-1">3</div>
                 <div className="text-xs text-gray-700 font-medium">Monate Garantie</div>
               </div>
               

@@ -42,7 +42,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-30 text-center text-white px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Dr. Phone Reparatur
+          Dr. Phone & PC Reparatur 
         </h1>
         <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8">
           Ihr Spezialist für Smartphone & PC Reparatur

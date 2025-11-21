@@ -48,7 +48,7 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
     {
       icon: "🛡️",
       title: "Garantie",
-      description: "12 Monate"
+      description: "3 Monate"
     },
     {
       icon: "💶",
@@ -156,7 +156,7 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
                 <div className="space-y-2 text-gray-600 leading-relaxed">
                   <p>
                     Professionelle Reparatur mit hochwertigen Ersatzteilen 
-                    und 12 Monaten Garantie.
+                    und 3 Monaten Garantie.
                   </p>
                   <p>
                     Unsere zertifizierten Techniker führen die Reparatur sorgfältig durch 
