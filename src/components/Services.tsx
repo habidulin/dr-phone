@@ -22,21 +22,6 @@ export default function Services() {
                 <span className="text-gray-500">Preis:</span>
                 <span className="font-semibold text-blue-600">{service.price}</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Dauer:</span>
-                <span className="font-medium">{service.duration}</span>
-              </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-1 mb-4">
-              {service.devices.map((device, index) => (
-                <span 
-                  key={index}
-                  className="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs font-medium"
-                >
-                  {device}
-                </span>
-              ))}
             </div>
             
             <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
