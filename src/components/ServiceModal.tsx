@@ -162,6 +162,7 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
                     Unsere zertifizierten Techniker führen die Reparatur sorgfältig durch 
                     und achten auf jedes Detail.
                   </p>
+                  <div className="border-t border-gray-200 my-1"></div>
                   <div className="grid grid-cols-5 gap-1">
                     {serviceFeatures.map((feature, index) => (
                       <div 
@@ -180,6 +181,8 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
                       </div>
                     ))}
                   </div>
+                  <div className="border-t border-gray-200 my-1"></div>
+
                 </div>
 
                 <div className="text-green-800 font-bold text-2xl text-left">
