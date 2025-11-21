@@ -2,7 +2,7 @@ import servicesData from '../data/services.json';
 
 export default function TeamSection() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16">
       <div className="container mx-auto px-4">
         
         {/* Заголовок слева */}
