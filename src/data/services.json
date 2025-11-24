@@ -5,7 +5,7 @@
       "name": "Displaytausch",
       "description": "Professioneller Austausch Ihres kaputten Displays mit Originalteilen",
       "price": "ab 30€",
-      "images": ["/images/services/display-1.jpg", "/images/services/display-2.jpg", "/images/services/display-3.jpg"],
+      "images": ["/images/services/display-2.jpg", "/images/services/display-3.jpg"],
       "icon": "📱"
     },
     {
@@ -13,7 +13,7 @@
       "name": "Akkutausch",
       "description": "Austausch des alten Akkus für verlängerte Batterielaufzeit",
       "price": "ab 25€",
-      "images": ["/images/services/akku-1.jpg", "/images/services/akku-2.jpg"],
+      "images": ["/images/services/akku-2.jpg", "/images/services/akku-3.jpg"],
       "icon": "🔋"
     },
     {
@@ -21,7 +21,7 @@
       "name": "Kameratausch", 
       "description": "Reparatur und Austausch der Front- oder Rückkamera",
       "price": "ab 35€",
-      "images": ["/images/services/kamera-1.jpg", "/images/services/kamera-2.jpg"],
+      "images": ["/images/services/kamera-2.jpg", "/images/services/kamera-3.jpg"],
       "icon": "📸"
     },
     {
@@ -29,7 +29,7 @@
       "name": "Panzerglas",
       "description": "Hochwertiges Panzerglas für optimalen Displayschutz",
       "price": "ab 15€",
-      "images": ["/images/services/glass-1.jpg"],
+      "images": ["/images/services/glass-2.jpg", "/images/services/glass-3.jpg"],
       "icon": "🛡️"
     },
     {
@@ -37,7 +37,7 @@
       "name": "Handyhülle",
       "description": "Stylische und schützende Hüllen für alle Modelle",
       "price": "ab 10€",
-      "images": ["/images/services/case-1.jpg", "/images/services/case-2.jpg"],
+      "images": ["/images/services/case-2.jpg", "/images/services/case-3.jpg"],
       "icon": "📞"
     }
   ],

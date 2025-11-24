@@ -57,6 +57,13 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
     }
   ];
 
+  // Закрытие по клику на оверлей
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   const nextImage = () => {
@@ -77,7 +84,10 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+    <div 
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+      onClick={handleOverlayClick} // ← ДОБАВИЛ ОБРАБОТЧИК
+    >
       <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         
         {/* Header */}
@@ -182,7 +192,6 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
                     ))}
                   </div>
                   <div className="border-t border-gray-200 my-1"></div>
-
                 </div>
 
                 <div className="text-green-800 font-bold text-2xl text-left">

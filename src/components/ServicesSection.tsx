@@ -1,8 +1,17 @@
 import servicesData from '../data/services.json';
 import { Smartphone, Battery, Camera, Shield, PcCase } from 'lucide-react';
 
+interface Service {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  images: string[];
+  icon: string;
+}
+
 interface ServicesSectionProps {
-  onServiceClick: (service: any) => void;
+  onServiceClick: (service: Service) => void;
 }
 
 // Маппинг иконок к услугам
