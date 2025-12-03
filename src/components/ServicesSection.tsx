@@ -37,7 +37,7 @@ export default function ServicesSection({ onServiceClick }: ServicesSectionProps
 
         {/* Сетка услуг */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {servicesData.services.map((service) => {
               const IconComponent = serviceIcons[service.name as keyof typeof serviceIcons];
               

@@ -29,8 +29,8 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-16 bg-white">
-      <div className="container mx-auto px-3">
+    <section id="contact" className="py-8 bg-white">
+      <div className="container mx-auto px-1">
         
         {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">

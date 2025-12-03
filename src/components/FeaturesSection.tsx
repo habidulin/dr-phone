@@ -40,7 +40,7 @@ export default function FeaturesSection() {
 
         {/* Сетка преимуществ */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
             {features.map((feature, index) => (
               <div 
                 key={index}

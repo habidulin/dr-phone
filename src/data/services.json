@@ -44,25 +44,25 @@
   "team": [
     {
       "id": 1,
-      "name": "Max Müller",
+      "name": "Masood Ramazan",
       "position": "Geschäftsführer",
       "image": "/images/team1.jpg"
     },
     {
       "id": 2,
-      "name": "Anna Schmidt", 
+      "name": "Maqsod Ramazan", 
       "position": "Techniker",
       "image": "/images/team2.jpg"
     },
     {
       "id": 3,
-      "name": "Peter Braun",
-      "position": "Kundendienst",
+      "name": "Jawid Arefi",
+      "position": "Verkäufer",
       "image": "/images/team3.jpg"
     },
     {
       "id": 4,
-      "name": "Lisa Vogel",
+      "name": "Maksy Habi",
       "position": "Marketing",
       "image": "/images/team4.jpg"
     }
