@@ -1,3 +1,5 @@
+"use client";
+
 import servicesData from '../data/services.json';
 import { Smartphone, Battery, Camera, Shield, PcCase } from 'lucide-react';
 
@@ -25,8 +27,8 @@ const serviceIcons = {
 
 export default function ServicesSection({ onServiceClick }: ServicesSectionProps) {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
+    <section className="py-14">
+      <div className="container mx-auto px-3">
         
         {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">

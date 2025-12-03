@@ -1,9 +1,11 @@
+"use client";
+
 import Image from 'next/image';
 
 export default function AboutSection() {
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-3">
         
         {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">

@@ -1,19 +1,47 @@
+"use client";
+
+import Image from 'next/image';
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 gap-4">
-        <div className="flex items-center gap-3">
-          <div className="text-2xl">📱</div>
-          <div className="font-bold text-xl">Dr. Phone</div>
+    <footer className="bg-gray-900 text-white py-3">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col gap-1">
+
+        {/* ВЕРХНИЙ РЯД — ЛОГО И КОНТАКТЫ */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* ЛОГО */}
+          <div className="flex items-center gap-2">
+            <div className="relative w-48 h-16 sm:w-56 sm:h-20">
+              <Image
+                src="/images/logo.png"
+                alt="Dr. Phone Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          {/* КОНТАКТЫ */}
+          <div className="font-medium text-center md:text-right">
+            <div className="text-lg">+49 155 6678 0738</div>
+            <a
+              href="mailto:vo-service2020@outlook.de"
+              className="text-gray-300 hover:text-white text-sm"
+            >
+              vo-service2020@outlook.de
+            </a>
+          </div>
         </div>
-        <div className="text-gray-400 text-sm text-center">
-          © 2025 Dr. Phone Potsdam • 
-          <a href="#" className="ml-2 hover:text-white">Impressum</a> • 
-          <a href="#" className="ml-2 hover:text-white">Datenschutz</a>
+
+        {/* НИЖНИЙ РЯД — ЮРИДИЧЕСКИЙ ТЕКСТ */}
+        <div className="text-gray-400 text-sm text-center mt-1">
+          © 2025 Dr. Phone Potsdam  
+          <span className="mx-2">•</span>
+          <a href="#" className="hover:text-white">Impressum</a>
+          <span className="mx-2">•</span>
+          <a href="#" className="hover:text-white">Datenschutz</a>
         </div>
-         <div className="font-medium">
-          +49 123 4567 1221
-        </div>
+
       </div>
     </footer>
   );

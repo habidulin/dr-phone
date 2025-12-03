@@ -1,3 +1,5 @@
+"use client";
+
 import servicesData from '../data/services.json';
 
 export default function ContactSection() {
@@ -9,8 +11,8 @@ export default function ContactSection() {
       address: "Babelsberger Str. 16, 14473 Potsdam",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4869.560164963621!2d13.060148862396287!3d52.39253689965969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f561d2e1fb1d%3A0xea00c8e9f8c94eb5!2sDr.phone!5e0!3m2!1sru!2sde!4v173723396302!5m2!1sru!2sde",
       openingHours: {
-        weekdays: "9:00 - 18:00",
-        saturday: "10:00 - 16:00", 
+        weekdays: "10:00 - 20:00",
+        saturday: "10:00 - 20:00", 
         sunday: "Geschlossen"
       }
     },
@@ -19,8 +21,8 @@ export default function ContactSection() {
       address: "Auf dem Strengfeld 6, 14542 Werder (Havel)",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1218.202823311312!2d12.931938889294994!3d52.36306424300512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f36b62d35bf9%3A0x432e3b00cc064a85!2sAuf%20dem%20Strengfeld%206%2C%2014542%20Werder%20(Havel)!5e0!3m2!1sru!2sde!4v173723527658!5m2!1sru!2sde",
       openingHours: {
-        weekdays: "9:00 - 18:00",
-        saturday: "10:00 - 16:00",
+        weekdays: "10:00 - 19:00",
+        saturday: "10:00 - 18:00",
         sunday: "Geschlossen"
       }
     }
@@ -28,7 +30,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-3">
         
         {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">

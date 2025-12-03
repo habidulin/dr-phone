@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from 'react';
 
 export default function HeroSection() {
@@ -19,7 +20,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-[55vh] flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute z-0 w-full h-full bg-black"></div>
       
       {/* Video Background */}

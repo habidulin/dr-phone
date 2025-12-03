@@ -1,9 +1,11 @@
+"use client";
+
 import servicesData from '../data/services.json';
 
 export default function TeamSection() {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-3">
         
         {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">

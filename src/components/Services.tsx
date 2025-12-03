@@ -1,4 +1,5 @@
 "use client";
+
 import servicesData from '../data/services.json';
 
 export default function Services() {

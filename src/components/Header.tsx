@@ -1,5 +1,7 @@
 "use client";
+
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -23,19 +25,27 @@ export default function Header() {
   }, [lastScrollY]);
 
   return (
-    <header className={`bg-white/90 backdrop-blur-md text-gray-800 py-4 px-6 fixed w-full z-50 transition-transform duration-300 border-b border-gray-200 ${
-      isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="text-xl">📱</div>
-          <div className="font-bold text-lg">Dr. Phone</div>
+    <header
+      className={`bg-black/50 backdrop-blur-md text-gray-800 py-2 px-2 fixed w-full z-50 transition-transform duration-300 ${
+        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* ЛОГО */}
+        <div className="relative w-44 h-6 sm:w-59 sm:h-10">
+          <Image
+            src="/images/logo.png"
+            alt="Dr. Phone Logo"
+            fill
+            className="object-contain"
+          />
         </div>
+        {/* ТЕЛЕФОН */}
         <a
-          href="tel:+4912345671221"
-          className="bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition font-medium text-sm shadow"
+          href="tel:+4915566780738"
+          className="bg-blue-600 text-white px-2 py-1 rounded-lg hover:bg-blue-700 transition font-medium text-sm sm:text-lg shadow whitespace-nowrap"
         >
-          📞 +49 123 4567 1221
+          📞 +49 155 6678 0738
         </a>
       </div>
     </header>

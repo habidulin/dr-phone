@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ChevronLeft, CheckCircle } from 'lucide-react';
 
 // Тип для данных формы
-interface FormData {
+export interface FormData {
   name: string;
   vorname: string;
   email: string;
@@ -14,17 +14,17 @@ interface FormData {
 interface ServiceOrderFormProps {
   serviceName: string;
   onBack: () => void;
-  onSubmit: (data: FormData) => void;
+  onSubmit: (data: FormData) => void; // оставляем, можно логировать
 }
 
 export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: ServiceOrderFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget as HTMLFormElement);
-    
-    // Создаем объект с правильным типом
+
     const data: FormData = {
       name: formData.get('name') as string,
       vorname: formData.get('vorname') as string,
@@ -32,22 +32,31 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
       phone: formData.get('phone') as string,
       description: formData.get('description') as string,
     };
-    
-    console.log('Form data:', data);
-    
-    // Показываем сообщение об успехе
-    setIsSubmitted(true);
-    
-    // Отправка данных
-    onSubmit(data);
-    
-    // Автоматически закрываем через 3 секунды
-    setTimeout(() => {
-      onBack();
-    }, 3000);
+
+    try {
+      const res = await fetch("/api/sendMail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, serviceName }),
+      });
+
+      if (!res.ok) throw new Error("Fehler beim Senden");
+
+      // Отправляем данные наверх (лог)
+      onSubmit(data);
+
+      // Показать сообщение об успехе
+      setIsSubmitted(true);
+      setError(null);
+
+      // Автозакрытие через 3 секунды
+      setTimeout(() => onBack(), 3000);
+    } catch (err) {
+      console.error(err);
+      setError("Fehler beim Senden. Bitte versuchen Sie es später erneut.");
+    }
   };
 
-  // Если форма отправлена - показываем сообщение
   if (isSubmitted) {
     return (
       <div className="p-8 text-center">
@@ -81,8 +90,13 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
         </button>
         <h2 className="text-2xl font-bold text-gray-800">Termin buchen - {serviceName}</h2>
       </div>
-      
+
+      {error && (
+        <div className="bg-red-100 text-red-700 p-4 rounded mb-4">{error}</div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 rounded-2xl p-6 border">
+        {/* тут оставляем все твои поля и стили без изменений */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -109,7 +123,7 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
             />
           </div>
         </div>
-        
+
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             E-Mail *
@@ -122,7 +136,7 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
             className="w-full p-4 border border-gray-300 rounded-xl bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
           />
         </div>
-        
+
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Handynummer *
@@ -135,7 +149,7 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
             className="w-full p-4 border border-gray-300 rounded-xl bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"
           />
         </div>
-        
+
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Beschreibung des Problems

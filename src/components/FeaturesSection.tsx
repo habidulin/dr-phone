@@ -1,3 +1,5 @@
+"use client";
+
 export default function FeaturesSection() {
   const features = [
     {
@@ -28,8 +30,8 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-14 bg-white">
+      <div className="container mx-auto px-3">
         
         {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">
