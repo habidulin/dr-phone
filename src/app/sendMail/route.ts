@@ -4,20 +4,18 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    // Настройка SMTP
     const transporter = nodemailer.createTransport({
-      host: "smtp.yourmail.com", // например, smtp.outlook.com
-      port: 587,                 // или 465 если SSL
-      secure: false,             // true если 465
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: false,
       auth: {
-        user: "your@email.com",  // твой email
-        pass: "your-email-password",
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
-    // Формируем письмо
-    const mailOptions = {
-      from: `"Dr. Phone" <your@email.com>`,
+    await transporter.sendMail({
+      from: `"Dr. Phone" <${process.env.SMTP_USER}>`,
       to: "vo-service2020@outlook.de",
       subject: `Neue Termin-Anfrage: ${data.serviceName}`,
       text: `
@@ -27,13 +25,11 @@ export async function POST(req: Request) {
         Service: ${data.serviceName}
         Beschreibung: ${data.description}
       `,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
-
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
+    return Response.json({ success: true });
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ success: false, error: error }), { status: 500 });
+    return Response.json({ success: false }, { status: 500 });
   }
 }

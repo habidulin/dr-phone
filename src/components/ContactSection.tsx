@@ -8,18 +8,18 @@ export default function ContactSection() {
   const locations = [
     {
       id: 1,
-      address: "Babelsberger Str. 16, 14473 Potsdam",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4869.560164963621!2d13.060148862396287!3d52.39253689965969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f561d2e1fb1d%3A0xea00c8e9f8c94eb5!2sDr.phone!5e0!3m2!1sru!2sde!4v173723396302!5m2!1sru!2sde",
+      address: "Dr.Phone PC Reparatur Potsdam",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2434.780039879822!2d13.064234112310551!3d52.39253767191145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f561d2e1fb1d%3A0xea00c8e9f8c94eb5!2sDr.Phone%20PC%20Reparatur%20Potsdam!5e0!3m2!1sde!2sde!4v1766491741232!5m2!1sde!2sde",
       openingHours: {
         weekdays: "10:00 - 20:00",
-        saturday: "10:00 - 20:00", 
+        saturday: "10:00 - 20:00",
         sunday: "Geschlossen"
       }
     },
     {
       id: 2,
-      address: "Auf dem Strengfeld 6, 14542 Werder (Havel)",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1218.202823311312!2d12.931938889294994!3d52.36306424300512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f36b62d35bf9%3A0x432e3b00cc064a85!2sAuf%20dem%20Strengfeld%206%2C%2014542%20Werder%20(Havel)!5e0!3m2!1sru!2sde!4v173723527658!5m2!1sru!2sde",
+      address: "Dr.Phone PC Reparatur Werder",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.4082533421215!2d12.930867612308814!3d52.36301697190375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f325aad11b19%3A0x75dcf9abbe36bee8!2sDr.Phone%20PC%20Reparatur%20Werder!5e0!3m2!1sde!2sde!4v1766491711715!5m2!1sde!2sde",
       openingHours: {
         weekdays: "10:00 - 19:00",
         saturday: "10:00 - 18:00",

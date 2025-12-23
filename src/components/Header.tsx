@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header
-      className={`bg-black/50 backdrop-blur-md text-gray-800 py-2 px-2 fixed w-full z-50 transition-transform duration-300 ${
+      className={`bg-black/40 backdrop-blur-md text-gray-800 py-3 px-2 fixed w-full z-50 transition-transform duration-300 ${
         isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
