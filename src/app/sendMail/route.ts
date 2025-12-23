@@ -4,19 +4,21 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
+    // Создаем транспорт для Gmail
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
+      host: "smtp.elasticemail.com",
+      port: 587,
       secure: false,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: "dr.phone1pc@gmail.com",
+        pass: "Drphone101",
       },
     });
 
+    // Отправка письма
     await transporter.sendMail({
-      from: `"Dr. Phone" <${process.env.SMTP_USER}>`,
-      to: "vo-service2020@outlook.de",
+      from: `"Dr. Phone" <dr.phone1pc@gmail.com>`,
+      to: "dr.phone1pc@gmail.com",
       subject: `Neue Termin-Anfrage: ${data.serviceName}`,
       text: `
         Name: ${data.name} ${data.vorname}
@@ -27,9 +29,9 @@ export async function POST(req: Request) {
       `,
     });
 
-    return Response.json({ success: true });
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
-    console.error(error);
-    return Response.json({ success: false }, { status: 500 });
+    console.error("Mail error:", error);
+    return new Response(JSON.stringify({ success: false }), { status: 500 });
   }
 }
