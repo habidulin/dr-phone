@@ -2,7 +2,6 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  console.log("🔑 Проверка пароля:", process.env.GMAIL_APP_PASSWORD ? "ЕСТЬ" : "НЕТ");
   
   try {
     const data = await req.json();

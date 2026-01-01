@@ -17,7 +17,7 @@ interface ServiceOrderFormProps {
   onSubmit: (data: FormData) => void;
 }
 
-export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: ServiceOrderFormProps) {
+export default function ServiceOrderForm({ serviceName, onBack }: ServiceOrderFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -46,10 +46,7 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
 
       setError(null);
 
-      // onSubmit(data);
-
-      // Автозакрытие через 3 секунды
-      setTimeout(() => onBack(), 3100);
+      setTimeout(() => onBack(), 3000);
     } catch (err) {
       console.error(err);
       setError("Fehler beim Senden. Bitte versuchen Sie es später erneut.");
@@ -71,7 +68,7 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
         </p>
         <div className="bg-blue-50 rounded-2xl p-4 border border-blue-200">
           <p className="text-blue-800 text-sm">
-            📞 <strong>Bei dringenden Fragen:</strong> +49 123 4567 1221
+            📞 <strong>Bei dringenden Fragen:</strong> +49 155 6678 0738
           </p>
         </div>
       </div>
