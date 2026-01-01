@@ -1,17 +1,20 @@
+// src/app/api/sendMail/route.ts
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
+  console.log("🔑 Проверка пароля:", process.env.GMAIL_APP_PASSWORD ? "ЕСТЬ" : "НЕТ");
+  
   try {
     const data = await req.json();
 
-    // Создаем транспорт для Gmail
+    // НАСТРОЙКИ GMAIL
     const transporter = nodemailer.createTransport({
-      host: "smtp.elasticemail.com",
+      host: "smtp.gmail.com",
       port: 587,
       secure: false,
       auth: {
         user: "dr.phone1pc@gmail.com",
-        pass: "Drphone101",
+        pass: process.env.GMAIL_APP_PASSWORD,
       },
     });
 
@@ -19,7 +22,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"Dr. Phone" <dr.phone1pc@gmail.com>`,
       to: "dr.phone1pc@gmail.com",
-      subject: `Neue Termin-Anfrage: ${data.serviceName}`,
+      subject: `Neue Terminanfrage: ${data.serviceName}`,
       text: `
         Name: ${data.name} ${data.vorname}
         Email: ${data.email}
@@ -29,9 +32,13 @@ export async function POST(req: Request) {
       `,
     });
 
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
+    return Response.json({ success: true });
+
   } catch (error) {
-    console.error("Mail error:", error);
-    return new Response(JSON.stringify({ success: false }), { status: 500 });
+    console.error("❌ Ошибка отправки:", error);
+    return Response.json({ 
+      success: false, 
+      error: "Email konnte nicht gesendet werden" 
+    }, { status: 500 });
   }
 }

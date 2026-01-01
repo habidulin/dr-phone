@@ -14,7 +14,7 @@ export interface FormData {
 interface ServiceOrderFormProps {
   serviceName: string;
   onBack: () => void;
-  onSubmit: (data: FormData) => void; // оставляем, можно логировать
+  onSubmit: (data: FormData) => void;
 }
 
 export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: ServiceOrderFormProps) {
