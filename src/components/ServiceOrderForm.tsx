@@ -46,7 +46,7 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
 
       setError(null);
 
-      onSubmit(data);
+      // onSubmit(data);
 
       // Автозакрытие через 3 секунды
       setTimeout(() => onBack(), 3100);
