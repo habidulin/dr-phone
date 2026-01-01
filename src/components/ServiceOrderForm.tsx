@@ -42,15 +42,14 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
 
       if (!res.ok) throw new Error("Fehler beim Senden");
 
-      // Отправляем данные наверх (лог)
-      onSubmit(data);
-
-      // Показать сообщение об успехе
       setIsSubmitted(true);
+
       setError(null);
 
+      onSubmit(data);
+
       // Автозакрытие через 3 секунды
-      setTimeout(() => onBack(), 3000);
+      setTimeout(() => onBack(), 3100);
     } catch (err) {
       console.error(err);
       setError("Fehler beim Senden. Bitte versuchen Sie es später erneut.");
@@ -96,7 +95,6 @@ export default function ServiceOrderForm({ serviceName, onBack, onSubmit }: Serv
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 rounded-2xl p-6 border">
-        {/* тут оставляем все твои поля и стили без изменений */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
