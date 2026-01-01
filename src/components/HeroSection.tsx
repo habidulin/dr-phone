@@ -33,7 +33,6 @@ export default function HeroSection() {
         className="absolute z-10 w-full h-full object-cover"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
-        {/* Fallback если видео не загрузится */}
         Your browser does not support the video tag.
       </video>
       

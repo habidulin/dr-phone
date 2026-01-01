@@ -33,12 +33,10 @@ export default function FeaturesSection() {
     <section className="py-14 bg-white">
       <div className="container mx-auto px-3">
         
-        {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">
           <h2 className="text-2xl font-bold">Warum Dr. Phone? ✨</h2>
         </div>
 
-        {/* Сетка преимуществ */}
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
             {features.map((feature, index) => (
@@ -47,14 +45,12 @@ export default function FeaturesSection() {
                 className="bg-white rounded-2xl hover:shadow-xl transition-all duration-300 group text-center"
               >
                 
-                {/* Иконка */}
                 <div className="h-24 flex items-center justify-center border-b group-hover:bg-gray-100 transition-colors">
                   <div className="text-5xl group-hover:scale-110 transition-transform">
                     {feature.icon}
                   </div>
                 </div>
 
-                {/* Информация */}
                 <div className="p-2">
                   <div className="font-bold text-gray-800 mb-2 transition-colors text-sm">
                     {feature.title}

@@ -6,7 +6,6 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    // НАСТРОЙКИ GMAIL
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
@@ -17,7 +16,6 @@ export async function POST(req: Request) {
       },
     });
 
-    // Отправка письма
     await transporter.sendMail({
       from: `"Dr. Phone" <dr.phone1pc@gmail.com>`,
       to: "dr.phone1pc@gmail.com",
@@ -34,7 +32,7 @@ export async function POST(req: Request) {
     return Response.json({ success: true });
 
   } catch (error) {
-    console.error("❌ Ошибка отправки:", error);
+    console.error("❌ Fehler beim Senden:", error);
     return Response.json({ 
       success: false, 
       error: "Email konnte nicht gesendet werden" 

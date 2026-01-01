@@ -32,17 +32,14 @@ export default function ContactSection() {
     <section id="contact" className="py-8 bg-white">
       <div className="container mx-auto px-1">
         
-        {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">
           <h2 className="text-2xl font-bold">Kontakt & Öffnungszeiten 📍</h2>
         </div>
 
-        {/* Две карточки с реальными картами */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-6xl mx-auto">
           {locations.map((location) => (
             <div key={location.id} className="bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-xl transition-shadow">
               
-              {/* Реальная Google Maps карта */}
               <div className="h-64 relative">
                 <iframe
                   src={location.mapUrl}
@@ -56,10 +53,8 @@ export default function ContactSection() {
                 />
               </div>
 
-              {/* Часы работы на карточке */}
               <div className="p-2 bg-gray-50 border-t">
                 <div className="text-center">
-                  {/* <div className="text-gray-600 text-sm font-semibold mb-2">Öffnungszeiten</div> */}
                   <div className="space-y-0 text-sm">
                     <div className="flex justify-between items-center py-1 border-b border-gray-200">
                       <span className="text-gray-600">Mo-Fr:</span>

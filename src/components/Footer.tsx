@@ -7,9 +7,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white py-3">
       <div className="max-w-7xl mx-auto px-4 flex flex-col gap-1">
 
-        {/* ВЕРХНИЙ РЯД — ЛОГО И КОНТАКТЫ */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          {/* ЛОГО */}
           <div className="flex items-center gap-2">
             <div className="relative w-48 h-16 sm:w-56 sm:h-20">
               <Image
@@ -21,7 +19,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* КОНТАКТЫ */}
           <div className="font-medium text-center md:text-right">
             <div className="text-lg">+49 155 6678 0738</div>
             <a
@@ -33,7 +30,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* НИЖНИЙ РЯД — ЮРИДИЧЕСКИЙ ТЕКСТ */}
         <div className="text-gray-400 text-sm text-center mt-1">
           © 2025 Dr. Phone Potsdam  
           <span className="mx-2">•</span>

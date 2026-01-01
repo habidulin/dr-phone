@@ -7,16 +7,13 @@ export default function AboutSection() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-3">
         
-        {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">
           <h2 className="text-2xl font-bold">Über Uns 🕵️‍♂️</h2>
         </div>
 
-        {/* Контент */}
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             
-            {/* Фото с Next.js Image */}
             <div className="bg-white rounded-2xl shadow-lg border overflow-hidden">
               <div className="h-80 from-gray-100 to-gray-200 flex items-center justify-center relative">
                 <Image
@@ -30,7 +27,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Текст */}
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-gray-800">Ihr zuverlässiger Partner für Smartphone-Reparaturen</h3>
               
@@ -56,7 +52,6 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Достижения - теперь внутри основного контейнера */}
           <div className="mt-4">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="text-center p-2 from-blue-50 to-blue-100 rounded-2xl border border-blue-200">

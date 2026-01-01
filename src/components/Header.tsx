@@ -31,7 +31,6 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* ЛОГО */}
         <div className="relative w-44 h-6 sm:w-59 sm:h-10">
           <Image
             src="/images/logo.png"
@@ -40,7 +39,6 @@ export default function Header() {
             className="object-contain"
           />
         </div>
-        {/* ТЕЛЕФОН */}
         <a
           href="tel:+4915566780738"
           className="bg-blue-600 text-white px-2 py-1 rounded-lg hover:bg-blue-700 transition font-medium text-sm sm:text-lg shadow whitespace-nowrap"

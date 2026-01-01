@@ -16,7 +16,6 @@ interface ServicesSectionProps {
   onServiceClick: (service: Service) => void;
 }
 
-// Маппинг иконок к услугам
 const serviceIcons = {
   'Displaytausch': Smartphone,
   'Akkutausch': Battery,
@@ -30,12 +29,10 @@ export default function ServicesSection({ onServiceClick }: ServicesSectionProps
     <section className="py-14">
       <div className="container mx-auto px-3">
         
-        {/* Заголовок слева */}
         <div className="max-w-6xl mx-auto mb-8">
           <h2 className="text-2xl font-bold">Unsere Services 🛠</h2>
         </div>
 
-        {/* Сетка услуг */}
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {servicesData.services.map((service) => {
@@ -48,7 +45,6 @@ export default function ServicesSection({ onServiceClick }: ServicesSectionProps
                   onClick={() => onServiceClick(service)}
                 >
                   
-                  {/* Иконка услуги */}
                   <div className="h-32 bg-blue-50 flex items-center justify-center border-b group-hover:bg-blue-100 transition-colors">
                     {IconComponent && (
                       <IconComponent 
@@ -58,7 +54,6 @@ export default function ServicesSection({ onServiceClick }: ServicesSectionProps
                     )}
                   </div>
 
-                  {/* Информация об услуге */}
                   <div className="p-2 text-center">
                     <div className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors text-sm leading-tight">
                       {service.name}

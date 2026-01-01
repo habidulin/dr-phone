@@ -4,7 +4,6 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import ServiceOrderForm from './ServiceOrderForm';
 import Image from 'next/image';
 
-// Тип для данных формы (должен совпадать с ServiceOrderForm)
 interface FormData {
   name: string;
   vorname: string;
@@ -57,7 +56,6 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
     }
   ];
 
-  // Закрытие по клику на оверлей
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -86,7 +84,7 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
   return (
     <div 
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
-      onClick={handleOverlayClick} // ← ДОБАВИЛ ОБРАБОТЧИК
+      onClick={handleOverlayClick}
     >
       <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         

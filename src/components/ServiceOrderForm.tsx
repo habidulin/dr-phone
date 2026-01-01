@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { ChevronLeft, CheckCircle } from 'lucide-react';
 
-// Тип для данных формы
 export interface FormData {
   name: string;
   vorname: string;
