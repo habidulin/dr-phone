@@ -32,8 +32,10 @@ export async function POST(req: Request) {
 
     return Response.json({ success: true });
 
-  } catch (error: any) {
-    console.error("❌ Fehler beim Senden:", error?.message || error, error?.stack || '');
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    const stack = error instanceof Error ? error.stack : '';
+    console.error("❌ Fehler beim Senden:", msg, stack);
     return Response.json({ 
       success: false, 
       error: "Email konnte nicht gesendet werden" 
