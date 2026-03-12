@@ -19,9 +19,12 @@ interface ServiceOrderFormProps {
 export default function ServiceOrderForm({ serviceName, onBack }: ServiceOrderFormProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;            // already in progress
+    setSending(true);
     const formData = new FormData(e.currentTarget as HTMLFormElement);
 
     const data: FormData = {
@@ -49,6 +52,8 @@ export default function ServiceOrderForm({ serviceName, onBack }: ServiceOrderFo
     } catch (err) {
       console.error(err);
       setError("Fehler beim Senden. Bitte versuchen Sie es später erneut.");
+    } finally {
+      setSending(false);
     }
   };
 
@@ -158,9 +163,10 @@ export default function ServiceOrderForm({ serviceName, onBack }: ServiceOrderFo
 
         <button 
           type="submit"
-          className="w-full bg-blue-600 text-white py-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl"
+          disabled={sending}
+          className="w-full bg-blue-600 text-white py-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Termin anfragen
+          {sending ? 'Senden…' : 'Termin anfragen'}
         </button>
         
         <p className="text-gray-500 text-sm text-center">

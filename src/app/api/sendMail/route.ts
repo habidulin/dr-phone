@@ -2,6 +2,7 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
+  console.log('API /sendMail called');
   
   try {
     const data = await req.json();
@@ -31,8 +32,8 @@ export async function POST(req: Request) {
 
     return Response.json({ success: true });
 
-  } catch (error) {
-    console.error("❌ Fehler beim Senden:", error);
+  } catch (error: any) {
+    console.error("❌ Fehler beim Senden:", error?.message || error, error?.stack || '');
     return Response.json({ 
       success: false, 
       error: "Email konnte nicht gesendet werden" 
